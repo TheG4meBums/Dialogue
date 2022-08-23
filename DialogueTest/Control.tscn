@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Label.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Why hello there traveler! How do you do?"
+script = ExtResource( 1 )
+dialogue = [ "Good evening", "How you feelin?", "Damn bro that's crazy" ]
+
+[node name="Good" type="Button" parent="Label"]
+margin_left = 19.0
+margin_top = 87.0
+margin_right = 118.0
+margin_bottom = 108.0
+text = "Good"
+
+[node name="Bad" type="Button" parent="Label"]
+margin_left = 176.0
+margin_top = 87.0
+margin_right = 275.0
+margin_bottom = 107.0
+text = "Bad"
+
+[node name="Button" type="Button" parent="Label"]
+margin_top = 34.0
+margin_right = 74.0
+margin_bottom = 54.0
+text = "continue?"
+
+[connection signal="pressed" from="Label/Good" to="Label" method="_on_Good_pressed"]
+[connection signal="pressed" from="Label/Bad" to="Label" method="_on_Bad_pressed"]
+[connection signal="pressed" from="Label/Button" to="Label" method="_on_Button_pressed"]
